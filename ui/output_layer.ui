@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>OutputLayer</class>
+ <widget class="QWidget" name="OutputLayer">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>218</width>
+    <height>275</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item row="1" column="0">
+    <widget class="QLabel" name="lbl_neurons">
+     <property name="text">
+      <string>Neurons</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="1">
+    <widget class="QSpinBox" name="spin_neurons">
+     <property name="minimum">
+      <number>1</number>
+     </property>
+     <property name="maximum">
+      <number>10000</number>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QLabel" name="lbl_activation">
+     <property name="text">
+      <string>Activation</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="1">
+    <widget class="QComboBox" name="combo_activation">
+     <item>
+      <property name="text">
+       <string>Softmax</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Tanh</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Sigmoid</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Linear</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Relu</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="3" column="0">
+    <widget class="QLabel" name="lbl_optimizer">
+     <property name="text">
+      <string>Optimizer</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="1">
+    <widget class="QComboBox" name="combo_optimizer">
+     <item>
+      <property name="text">
+       <string>Adam</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="4" column="0">
+    <widget class="QLabel" name="lbl_loss">
+     <property name="text">
+      <string>Loss</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="1">
+    <widget class="QComboBox" name="combo_loss">
+     <item>
+      <property name="text">
+       <string>Categorical crossentropy</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>MSE</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="5" column="0">
+    <widget class="QLabel" name="lbl_metrics">
+     <property name="text">
+      <string>Metrics</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="1">
+    <layout class="QVBoxLayout" name="layout_metrics">
+     <item>
+      <widget class="QCheckBox" name="cbx_train_accuracy">
+       <property name="text">
+        <string>Train Accuracy</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QCheckBox" name="cbx_val_accuracy">
+       <property name="text">
+        <string>Validation Accuracy</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QCheckBox" name="cbx_train_loss">
+       <property name="text">
+        <string>Train Loss</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QCheckBox" name="cbx_val_loss">
+       <property name="text">
+        <string>Validation Loss</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QCheckBox" name="cbx_train_auc">
+       <property name="text">
+        <string>Training AUC</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QCheckBox" name="cbx_val_auc">
+       <property name="text">
+        <string>Validation AUC</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item row="0" column="0" colspan="2" alignment="Qt::AlignHCenter|Qt::AlignTop">
+    <widget class="QLabel" name="lbl_name">
+     <property name="text">
+      <string>Output</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

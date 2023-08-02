@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>InputLayer</class>
+ <widget class="QWidget" name="InputLayer">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>137</width>
+    <height>202</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item row="1" column="0">
+    <layout class="QFormLayout" name="layout_inputs">
+     <item row="0" column="0">
+      <widget class="QLabel" name="lbl_first_dimention">
+       <property name="text">
+        <string>1 dimention</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QSpinBox" name="spin_first_dimention">
+       <property name="minimum">
+        <number>1</number>
+       </property>
+       <property name="maximum">
+        <number>1000</number>
+       </property>
+       <property name="value">
+        <number>10</number>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QPushButton" name="btn_add_input">
+       <property name="text">
+        <string>Add</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QPushButton" name="btn_delete_input">
+       <property name="text">
+        <string>Delete</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item row="0" column="0" alignment="Qt::AlignHCenter|Qt::AlignTop">
+    <widget class="QLabel" name="lbl_name">
+     <property name="text">
+      <string>Input</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>btn_add_input</sender>
+   <signal>clicked()</signal>
+   <receiver>InputLayer</receiver>
+   <slot>add_input()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>28</x>
+     <y>142</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>68</x>
+     <y>100</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn_delete_input</sender>
+   <signal>clicked()</signal>
+   <receiver>InputLayer</receiver>
+   <slot>delete_input()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>98</x>
+     <y>142</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>68</x>
+     <y>100</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>add_input()</slot>
+  <slot>delete_input()</slot>
+ </slots>
+</ui>

@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>DatasetManager</class>
+ <widget class="QWidget" name="DatasetManager">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>840</width>
+    <height>696</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item row="0" column="1">
+    <widget class="QLabel" name="lbl_height">
+     <property name="text">
+      <string>Height</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="3">
+    <widget class="QPushButton" name="btn_create_dataset">
+     <property name="text">
+      <string>Create dataset</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="3">
+    <widget class="QPushButton" name="btn_choose_dataset">
+     <property name="text">
+      <string>Choose dataset</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="3">
+    <widget class="QPushButton" name="btn_save_dataset">
+     <property name="text">
+      <string>Save dataset</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="1">
+    <widget class="QPushButton" name="btn_choose_image">
+     <property name="text">
+      <string>Choose image</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="3">
+    <widget class="QSpinBox" name="spin_ouputs">
+     <property name="minimum">
+      <number>1</number>
+     </property>
+     <property name="maximum">
+      <number>1000</number>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="3">
+    <widget class="QPushButton" name="btn_set_outputs">
+     <property name="text">
+      <string>Set number of outputs</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="1">
+    <widget class="QCheckBox" name="cbx_same_size">
+     <property name="text">
+      <string>Same</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="1">
+    <widget class="QLabel" name="lbl_width">
+     <property name="text">
+      <string>Width</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="2">
+    <widget class="QPushButton" name="btn_zoom">
+     <property name="text">
+      <string>Zoom in</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="2">
+    <widget class="QSpinBox" name="spin_height">
+     <property name="minimum">
+      <number>1</number>
+     </property>
+     <property name="maximum">
+      <number>10000</number>
+     </property>
+     <property name="value">
+      <number>5</number>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="2">
+    <widget class="QSpinBox" name="spin_width">
+     <property name="minimum">
+      <number>1</number>
+     </property>
+     <property name="maximum">
+      <number>10000</number>
+     </property>
+     <property name="value">
+      <number>5</number>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="2">
+    <widget class="QSpinBox" name="spin_speed">
+     <property name="minimum">
+      <number>1</number>
+     </property>
+     <property name="maximum">
+      <number>1000</number>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="1">
+    <widget class="QLabel" name="lbl_speed">
+     <property name="text">
+      <string>Moving speed</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="2">
+    <widget class="QLabel" name="lbl_position">
+     <property name="text">
+      <string>Current position:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="1" colspan="2">
+    <widget class="QWidget" name="container" native="true">
+     <layout class="QGridLayout" name="gridLayout_2">
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <item row="0" column="0" alignment="Qt::AlignHCenter|Qt::AlignVCenter">
+       <widget class="ClickableImageLabel" name="lbl_image">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>Image placeholder</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="5" column="3">
+    <widget class="FieldsCreator" name="fields_expected" native="true">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>FieldsCreator</class>
+   <extends>QWidget</extends>
+   <header location="global">app.custom_widgets.fields_creator</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>ClickableImageLabel</class>
+   <extends>QLabel</extends>
+   <header location="global">app.custom_widgets.custom_widget</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>btn_choose_image</sender>
+   <signal>clicked()</signal>
+   <receiver>DatasetManager</receiver>
+   <slot>load_image()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>110</x>
+     <y>115</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>338</x>
+     <y>282</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn_set_outputs</sender>
+   <signal>clicked()</signal>
+   <receiver>DatasetManager</receiver>
+   <slot>set_outputs()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>566</x>
+     <y>115</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>338</x>
+     <y>282</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spin_height</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>DatasetManager</receiver>
+   <slot>set_height(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>338</x>
+     <y>9</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>338</x>
+     <y>282</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spin_speed</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>DatasetManager</receiver>
+   <slot>set_speed(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>338</x>
+     <y>61</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>338</x>
+     <y>282</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>cbx_same_size</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>DatasetManager</receiver>
+   <slot>set_same_size(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>110</x>
+     <y>87</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>338</x>
+     <y>282</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn_zoom</sender>
+   <signal>clicked()</signal>
+   <receiver>DatasetManager</receiver>
+   <slot>zoom()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>338</x>
+     <y>115</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>338</x>
+     <y>282</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spin_width</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>DatasetManager</receiver>
+   <slot>set_width(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>338</x>
+     <y>35</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>338</x>
+     <y>282</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn_choose_dataset</sender>
+   <signal>clicked()</signal>
+   <receiver>DatasetManager</receiver>
+   <slot>choose_dataset()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>701</x>
+     <y>40</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>419</x>
+     <y>347</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn_create_dataset</sender>
+   <signal>clicked()</signal>
+   <receiver>DatasetManager</receiver>
+   <slot>create_dataset()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>701</x>
+     <y>11</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>419</x>
+     <y>347</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn_save_dataset</sender>
+   <signal>clicked()</signal>
+   <receiver>DatasetManager</receiver>
+   <slot>save_dataset()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>701</x>
+     <y>69</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>419</x>
+     <y>347</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>set_height(int)</slot>
+  <slot>set_width(int)</slot>
+  <slot>set_speed(int)</slot>
+  <slot>set_outputs()</slot>
+  <slot>zoom()</slot>
+  <slot>load_image()</slot>
+  <slot>set_same_size(int)</slot>
+  <slot>load_dataset()</slot>
+  <slot>create_dataset()</slot>
+  <slot>choose_dataset()</slot>
+  <slot>save_dataset()</slot>
+ </slots>
+</ui>

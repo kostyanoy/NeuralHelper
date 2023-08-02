@@ -1,0 +1,609 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>598</width>
+    <height>509</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Neural helper</string>
+  </property>
+  <widget class="QWidget" name="central_widget">
+   <layout class="QGridLayout" name="layout_central">
+    <item row="0" column="1">
+     <widget class="QTabWidget" name="tab_model">
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <property name="documentMode">
+       <bool>false</bool>
+      </property>
+      <property name="tabsClosable">
+       <bool>false</bool>
+      </property>
+      <widget class="QWidget" name="create_model">
+       <attribute name="title">
+        <string>Create model</string>
+       </attribute>
+       <layout class="QHBoxLayout" name="layout_create">
+        <item>
+         <widget class="QScrollArea" name="srcl_create_layers">
+          <property name="widgetResizable">
+           <bool>true</bool>
+          </property>
+          <widget class="QWidget" name="srcl_create_layers_content">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>554</width>
+             <height>394</height>
+            </rect>
+           </property>
+           <layout class="QHBoxLayout" name="layout_create_layers">
+            <item>
+             <widget class="InputLayer" name="input_layer" native="true">
+              <property name="enabled">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="Line" name="line_2">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <layout class="QGridLayout" name="layout_add">
+              <item row="0" column="0" colspan="2" alignment="Qt::AlignTop">
+               <widget class="QPushButton" name="btn_hidden_add">
+                <property name="text">
+                 <string>Add layer</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="0">
+               <widget class="QLabel" name="lbl_add_type">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="text">
+                 <string>Layer type</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="1">
+               <widget class="QComboBox" name="combo_add_type">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>80</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <item>
+                 <property name="text">
+                  <string>Dense</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>LSTM</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Dropout</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Conv2D</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Maxpooling</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <widget class="Line" name="line_3">
+              <property name="frameShadow">
+               <enum>QFrame::Sunken</enum>
+              </property>
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="OutputLayer" name="output_layer" native="true"/>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="train_model">
+       <attribute name="title">
+        <string>Train model</string>
+       </attribute>
+       <layout class="QGridLayout" name="layout_train">
+        <item row="5" column="1">
+         <widget class="QSpinBox" name="spin_train_batch">
+          <property name="minimum">
+           <number>1</number>
+          </property>
+          <property name="maximum">
+           <number>1024</number>
+          </property>
+          <property name="value">
+           <number>64</number>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="0">
+         <widget class="QLabel" name="lbl_train_epochs">
+          <property name="text">
+           <string>Epochs</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <widget class="QLabel" name="lbl_train_file">
+          <property name="text">
+           <string>File type</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="btn_train_file">
+          <property name="text">
+           <string>Choose train data file</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QCheckBox" name="cbx_train_validation">
+          <property name="text">
+           <string>Have validation data</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0" colspan="2">
+         <widget class="QPushButton" name="btn_train_generate_model">
+          <property name="text">
+           <string>Generate model</string>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="0">
+         <widget class="QLabel" name="lbl_train_batch">
+          <property name="text">
+           <string>Batch size</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="2" rowspan="8">
+         <widget class="Line" name="line_4">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="3" rowspan="8">
+         <layout class="QVBoxLayout" name="layout_train_metrics">
+          <item alignment="Qt::AlignHCenter|Qt::AlignTop">
+           <widget class="QLabel" name="lbl_train_metrics">
+            <property name="text">
+             <string>Metrics</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="MatplotlibWidget" name="plot_train_metrics" native="true">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="0" column="1">
+         <widget class="QComboBox" name="combo_train_file">
+          <item>
+           <property name="text">
+            <string>.py</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="4" column="1">
+         <widget class="QSpinBox" name="spin_train_epochs">
+          <property name="minimum">
+           <number>1</number>
+          </property>
+          <property name="maximum">
+           <number>100</number>
+          </property>
+          <property name="value">
+           <number>5</number>
+          </property>
+         </widget>
+        </item>
+        <item row="7" column="0" colspan="2">
+         <widget class="QPushButton" name="btn_train_start">
+          <property name="text">
+           <string>Start</string>
+          </property>
+         </widget>
+        </item>
+        <item row="6" column="0">
+         <widget class="QCheckBox" name="cbx_train_continue">
+          <property name="text">
+           <string>Continue</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="use_model">
+       <attribute name="title">
+        <string>Use model</string>
+       </attribute>
+       <layout class="QGridLayout" name="layout_use">
+        <item row="0" column="3">
+         <widget class="QPushButton" name="btn_use_file">
+          <property name="text">
+           <string>Choose .py file to represent result</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="3">
+         <widget class="QPushButton" name="btn_use_run">
+          <property name="text">
+           <string>Run</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1" rowspan="3">
+         <widget class="QTabWidget" name="tab_use_type">
+          <property name="currentIndex">
+           <number>0</number>
+          </property>
+          <property name="documentMode">
+           <bool>false</bool>
+          </property>
+          <widget class="QWidget" name="use_image">
+           <attribute name="title">
+            <string>Image</string>
+           </attribute>
+           <layout class="QGridLayout" name="layout_use_image">
+            <item row="0" column="0" colspan="2">
+             <widget class="DrawingManager" name="drawing_manager" native="true"/>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="use_flat">
+           <attribute name="title">
+            <string>Flat</string>
+           </attribute>
+           <layout class="QGridLayout" name="layout_use_flat">
+            <item row="0" column="0">
+             <widget class="QPushButton" name="btn_use_set_inputs">
+              <property name="text">
+               <string>Set number of inputs</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QSpinBox" name="spin_use_set_inputs">
+              <property name="minimum">
+               <number>1</number>
+              </property>
+              <property name="value">
+               <number>1</number>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0" alignment="Qt::AlignRight">
+             <widget class="QLabel" name="lbl_use_flat_name">
+              <property name="text">
+               <string>Field name</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1" alignment="Qt::AlignRight">
+             <widget class="QLabel" name="lbl_use_flat_value">
+              <property name="text">
+               <string>Field value</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0" colspan="2">
+             <widget class="FieldsCreator" name="inputs_use_flat" native="true">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+        <item row="2" column="3" alignment="Qt::AlignHCenter|Qt::AlignVCenter">
+         <widget class="QLabel" name="lbl_use_result">
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="data">
+       <attribute name="title">
+        <string>Dataset</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout">
+        <item row="0" column="0">
+         <widget class="DatasetManager" name="widget" native="true"/>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>598</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu_file">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="action_save_model"/>
+    <addaction name="action_load_model"/>
+   </widget>
+   <addaction name="menu_file"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="action_save_model">
+   <property name="text">
+    <string>Save model</string>
+   </property>
+  </action>
+  <action name="action_load_model">
+   <property name="text">
+    <string>Load model</string>
+   </property>
+  </action>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>DrawingManager</class>
+   <extends>QWidget</extends>
+   <header location="global">app.custom_widgets.drawing_manager</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>MatplotlibWidget</class>
+   <extends>QWidget</extends>
+   <header location="global">app.custom_widgets.matplotlib_widget</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>InputLayer</class>
+   <extends>QWidget</extends>
+   <header location="global">app.custom_widgets.layers</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>OutputLayer</class>
+   <extends>QWidget</extends>
+   <header location="global">app.custom_widgets.layers</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>FieldsCreator</class>
+   <extends>QWidget</extends>
+   <header location="global">app.custom_widgets.fields_creator</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>DatasetManager</class>
+   <extends>QWidget</extends>
+   <header location="global">app.custom_widgets.dataset_manager</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>btn_hidden_add</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>create_add_layer()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>450</x>
+     <y>78</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>447</x>
+     <y>326</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn_train_file</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>train_choose_data()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>158</x>
+     <y>103</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>447</x>
+     <y>326</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn_use_set_inputs</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>use_set_inputs()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>191</x>
+     <y>345</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>447</x>
+     <y>326</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn_use_file</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>use_choose_represent_file()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>786</x>
+     <y>77</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>447</x>
+     <y>326</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn_train_start</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>train_start()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>300</x>
+     <y>595</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>447</x>
+     <y>326</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn_use_run</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>use_predict_sample()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>476</x>
+     <y>106</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>292</x>
+     <y>282</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn_train_generate_model</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>train_generate_model()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>193</x>
+     <y>132</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>286</x>
+     <y>262</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>action_load_model</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>menu_load_model()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>286</x>
+     <y>262</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>action_save_model</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>menu_save_model()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>286</x>
+     <y>262</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>create_add_layer()</slot>
+  <slot>train_choose_data()</slot>
+  <slot>train_start()</slot>
+  <slot>use_choose_represent_file()</slot>
+  <slot>use_predict_sample()</slot>
+  <slot>use_set_inputs()</slot>
+  <slot>train_generate_model()</slot>
+  <slot>menu_save_model()</slot>
+  <slot>menu_load_model()</slot>
+ </slots>
+</ui>

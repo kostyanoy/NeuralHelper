@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>LSTMLayer</class>
+ <widget class="QWidget" name="LSTMLayer">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>524</width>
+    <height>187</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="3" column="0">
+    <widget class="QLabel" name="lbl_activation">
+     <property name="text">
+      <string>Activation</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="1">
+    <widget class="QComboBox" name="combo_regularizer">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <item>
+      <property name="text">
+       <string>L1</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>L2</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>None</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="2" column="1">
+    <widget class="QSpinBox" name="spin_units">
+     <property name="minimum">
+      <number>1</number>
+     </property>
+     <property name="maximum">
+      <number>10000</number>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="1">
+    <widget class="QComboBox" name="combo_activation">
+     <item>
+      <property name="text">
+       <string>Sigmoid</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Tanh</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Relu</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="5" column="0">
+    <widget class="QLabel" name="lbl_regularizer">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="text">
+      <string>Regularizer </string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="0">
+    <widget class="QLabel" name="lbl_recurrent_activation">
+     <property name="text">
+      <string>Recurrent activation</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0" colspan="2">
+    <widget class="QPushButton" name="btn_delete">
+     <property name="text">
+      <string>Delete layer</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QLabel" name="lbl_units">
+     <property name="text">
+      <string>Units</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="0" colspan="2" alignment="Qt::AlignHCenter|Qt::AlignTop">
+    <widget class="QLabel" name="lbl_name">
+     <property name="text">
+      <string>LSTM</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="1">
+    <widget class="QComboBox" name="combo_recurrent_activation">
+     <item>
+      <property name="text">
+       <string>Sigmoid</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Tanh</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Relu</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="6" column="0">
+    <widget class="QCheckBox" name="cbx_return_sequences">
+     <property name="text">
+      <string>Return sequences</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>btn_delete</sender>
+   <signal>clicked()</signal>
+   <receiver>LSTMLayer</receiver>
+   <slot>delete_layer()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>261</x>
+     <y>39</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>261</x>
+     <y>93</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>delete_layer()</slot>
+ </slots>
+</ui>
