@@ -14,7 +14,7 @@ from utils.model_manager import ModelManager
 
 # main application
 class App(QMainWindow):
-    STATUS_BAR_MSG = 5000  # milli of showing message to user in status bar
+    STATUS_BAR_MSG = 5000  # millis of showing message to user in status bar
     PYTHON_TRAIN_ATTRS = ["load_data"]  # required methods in train file
     REPR_ATTRS = ["represent"]  # required methods in represent file
     LAYERS = {
@@ -32,6 +32,7 @@ class App(QMainWindow):
 
         self.is_training = False  # if model is currently training
 
+        # connect signals to actions
         self.model_manager = ModelManager(self)
         self.model_manager.message.connect(self.show_status)
         self.model_manager.finished.connect(self.train_stop)

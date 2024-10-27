@@ -6,7 +6,7 @@ from keras import Sequential
 from app.custom_widgets.layers import Layer
 
 
-# metrics of training models
+# metrics of training models to show in UI
 class Metric:
     def __init__(self, name: str, history_name: str, cbx):
         self.name = name  # shown name
@@ -125,7 +125,7 @@ class ModelManager(QThread):
     def have_model(self) -> bool:
         return self.model is not None
 
-    # get current mdoel
+    # get current model
     def get_model(self) -> Sequential:
         return self.model
 

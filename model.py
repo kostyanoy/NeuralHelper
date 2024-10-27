@@ -1,7 +1,6 @@
 from keras.datasets import mnist
-from keras.layers import Dense, Flatten, Dropout
+from keras.layers import Dense, Flatten
 from keras.models import Sequential
-
 
 # example of creating model
 # load data
@@ -9,7 +8,7 @@ from keras.models import Sequential
 x_train = x_train / 255.0
 x_test = x_test / 255.0
 
-# create model
+# create model with choosen
 model = Sequential([
     Flatten(input_shape=(28, 28)),
     Dense(128, activation='relu'),
@@ -26,7 +25,6 @@ model.fit(x_train, y_train, epochs=5, validation_data=(x_test, y_test))
 
 # test model
 test_loss, test_acc = model.evaluate(x_test, y_test)
-
 print('Test data accuracy:', test_acc)
 
 # save model
